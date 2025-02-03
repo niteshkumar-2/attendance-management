@@ -1,4 +1,4 @@
-/* Centering the Login Card */
+
 .login-container {
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     background-color: #f4f4f4;
   }
   
-  /* Card Styling */
+
   .login-card {
     background: #fff;
     padding: 30px;
@@ -18,7 +18,7 @@
     max-width: 400px;
   }
   
-  /* Title Styling */
+
   .login-title {
     font-size: 24px;
     font-weight: bold;
@@ -26,7 +26,7 @@
     margin-bottom: 20px;
   }
   
-  /* Input Field Styling */
+
   .input-group {
     display: flex;
     flex-direction: column;
@@ -47,7 +47,6 @@
     width: 100%;
   }
   
-  /* Button Styling */
   .login-btn {
     width: 100%;
     padding: 12px;
@@ -64,7 +63,6 @@
     background: #0056b3;
   }
   
-  /* Responsive Design */
   @media (max-width: 480px) {
     .login-card {
       padding: 20px;

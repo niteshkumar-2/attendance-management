@@ -1,43 +1,3 @@
-// import { Component } from '@angular/core';
-// import { Observable, Subject } from 'rxjs';
-// import { WebcamImage } from 'ngx-webcam';
-// import { MatCardModule } from '@angular/material/card';
-// import { MatButtonModule } from '@angular/material/button';
-// import { WebcamModule } from 'ngx-webcam';
-// import { CommonModule } from '@angular/common';
-
-// @Component({
-//   selector: 'app-mark-attendance',
-//   standalone: true,
-//   imports: [WebcamModule, MatCardModule, MatButtonModule, CommonModule],
-//   templateUrl: './mark-attendance.component.html',
-// })
-// export class MarkAttendanceComponent {
-//   trigger: Subject<void> = new Subject<void>();
-//   webcamImage: WebcamImage | null = null;
-
-//   get triggerObservable(): Observable<void> {
-//     return this.trigger.asObservable();
-//   }
-
-//   captureImage(): void {
-//     this.trigger.next();
-//   }
-
-//   handleImage(image: WebcamImage): void {
-//     this.webcamImage = image;
-//   }
-
-//   confirmAttendance(): void {
-//     if (this.webcamImage) {
-//       console.log('Attendance marked with image:', this.webcamImage.imageAsDataUrl);
-//       alert('Attendance marked successfully!');
-//     } else {
-//       alert('Please capture an image first.');
-//     }
-//   }
-// }
-
 import { Component } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { WebcamImage } from 'ngx-webcam';
@@ -149,20 +109,6 @@ export class MarkAttendanceComponent {
   logout(){
     this.authService.logout()
   }
-
-  //   handleImage(image: WebcamImage): void {
-//     this.webcamImage = image;
-//   }
-
-//   confirmAttendance(): void {
-//     if (this.webcamImage) {
-//       console.log('Attendance marked with image:', this.webcamImage.imageAsDataUrl);
-//       alert('Attendance marked successfully!');
-//     } else {
-//       alert('Please capture an image first.');
-//     }
-//   }
-  // Method to confirm attendance
   confirmAttendance(): void {
     if (this.webcamImage) {
       const attendanceData = {

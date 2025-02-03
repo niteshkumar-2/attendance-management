@@ -7,21 +7,22 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   standalone: true,
   template: `
-  <div class="staff-dashboard">
-  <div class="dashboard-card">
-    <h2>Welcome, {{ staffName }}</h2>
+    <div class="staff-dashboard">
+      <div class="dashboard-card">
+        <h2>Welcome, {{ staffName }}</h2>
 
-    <div class="dashboard-actions">
-      <a routerLink="/staff/shifts" class="btn">📋 View Shifts</a>
-      <a routerLink="/staff/mark-attendance" class="btn">📸 Mark Attendance</a>
+        <div class="dashboard-actions">
+          <a routerLink="/staff/shifts" class="btn">📋 View Shifts</a>
+          <a routerLink="/staff/mark-attendance" class="btn"
+            >📸 Mark Attendance</a
+          >
+        </div>
+
+        <button (click)="logout()" class="logout-btn">🚪 Logout</button>
+      </div>
     </div>
-
-    <button (click)="logout()" class="logout-btn">🚪 Logout</button>
-  </div>
-</div>
-
   `,
-  styles:`
+  styles: `
   .staff-dashboard {
   display: flex;
   justify-content: center;
@@ -82,14 +83,14 @@ h2 {
   background: #a71d2a;
 }
 
-  `
+  `,
 })
 export class StaffDashboardComponent {
   staffName = 'John Doe';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   logout() {
-    this.authService.logout()
+    this.authService.logout();
   }
 }

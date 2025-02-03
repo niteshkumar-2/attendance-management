@@ -9,13 +9,11 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  // Simulate login
   login(userData: { username: string; password : string ; roles: string ;}) {
     this.user = userData;
     localStorage.setItem('user', JSON.stringify(this.user));
   }
 
-  // Get current user
   getUser() {
     if (!this.user) {
       this.user = JSON.parse(localStorage.getItem('user') || 'null');
@@ -23,7 +21,6 @@ export class AuthService {
     return this.user;
   }
 
-  // Check if user has a required role
   hasRole(allowedRoles: string[]): boolean {
     const user = this.getUser();
     console.log(user)
