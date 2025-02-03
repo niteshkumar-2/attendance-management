@@ -1,0 +1,12 @@
+<div class="dashboard-container">
+  <div class="dashboard-card">
+    <h2 class="dashboard-title">Welcome, {{ managerName }}</h2>
+
+    <div class="dashboard-actions">
+      <a routerLink="/dashboard/roaster" class="btn btn-primary">📋 Manage Roster</a>
+      <a routerLink="/dashboard/staff-attendance" class="btn btn-secondary">📸 View Attendance</a>
+    </div>
+
+    <button (click)="logout()" class="btn btn-danger">🚪 Logout</button>
+  </div>
+</div>

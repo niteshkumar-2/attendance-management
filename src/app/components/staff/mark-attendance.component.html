@@ -1,0 +1,29 @@
+<mat-card class="attendance-card">
+  <mat-card-header>
+    <mat-card-title>Mark Attendance</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- Main Flex Container -->
+    <div class="camera-container">
+      <!-- Webcam Section -->
+      <div class="webcam-section">
+        <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+        <button mat-raised-button color="primary" (click)="captureImage()" class="capture-btn">
+          📸 Capture Image
+        </button>
+      </div>
+
+      <!-- Captured Image Section -->
+      <div class="image-section" *ngIf="webcamImage">
+        <img [src]="webcamImage.imageAsDataUrl" alt="Captured Image" class="captured-image" />
+        <button mat-raised-button color="accent" (click)="confirmAttendance()" class="confirm-btn">
+          ✅ Confirm Attendance
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<!-- Logout Button -->
+<button (click)="logout()" class="logout-button">🚪 Logout</button>
